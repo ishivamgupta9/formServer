@@ -45,6 +45,10 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 
+app.get('/', (req, res) => {
+    res.send("Welcome to my backend")
+})
+
 app.get('/form-user', (req, res) => {
     User.find({})
     .then(response => res.status(200).send(response))
